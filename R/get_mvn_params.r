@@ -114,7 +114,7 @@ get_mvn_params <- function(x, scale=1, correlations=TRUE, fix) {
           }
 
           if (is.null(A)) {
-            A <- diag(apply(wide, 2, sd))
+            A <- as.matrix(diag(as.matrix(apply(wide, 2, sd))))
             rownames(A) <- colnames(wide)
             colnames(A) <- colnames(wide)
           }
